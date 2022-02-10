@@ -51,14 +51,14 @@
         const bval = document.getElementById('bal-value');
         document.getElementById('button-deposit').addEventListener('click', function(event) {
             var nval = document.getElementById('input-deposit');
-            dval.innerText = Number(dval.innerText) + Number(nval.value);
-            bval.innerText = Number(bval.innerText) + Number(nval.value);
+            dval.innerText = Number(dval.innerText) + Math.abs(Number(nval.value));
+            bval.innerText = Number(bval.innerText) + Math.abs(Number(nval.value));
             nval.value = '';
         })
         document.getElementById('button-withdraw').addEventListener('click', function(event) {
             var nval = document.getElementById('input-withdraw');
-            wval.innerText = Number(wval.innerText) + Number(nval.value);
-            bval.innerText = Number(bval.innerText) - Number(nval.value);
+            wval.innerText = Number(wval.innerText) + Math.abs(Number(nval.value));
+            bval.innerText = Number(bval.innerText) - Math.abs(Number(nval.value));
             nval.value = '';
         })
         document.getElementById('button-logout').addEventListener('click', function() {
