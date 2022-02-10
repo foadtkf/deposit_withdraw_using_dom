@@ -49,15 +49,20 @@
         const dval = document.getElementById('dep-value');
         const wval = document.getElementById('wid-value');
         const bval = document.getElementById('bal-value');
+
+        function totalval(oval, nval) {
+            return Number(oval.innerText) + Math.abs(Number(nval.value));
+        }
+
         document.getElementById('button-deposit').addEventListener('click', function(event) {
             var nval = document.getElementById('input-deposit');
-            dval.innerText = Number(dval.innerText) + Math.abs(Number(nval.value));
+            dval.innerText = totalval(dval, nval);
             bval.innerText = Number(bval.innerText) + Math.abs(Number(nval.value));
             nval.value = '';
         })
         document.getElementById('button-withdraw').addEventListener('click', function(event) {
             var nval = document.getElementById('input-withdraw');
-            wval.innerText = Number(wval.innerText) + Math.abs(Number(nval.value));
+            wval.innerText = totalval(wval, nval);
             bval.innerText = Number(bval.innerText) - Math.abs(Number(nval.value));
             nval.value = '';
         })
