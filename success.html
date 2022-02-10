@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body>
+    <header>
+        <h1 class="mt-28 text-center text-5xl hover:font-bold">Welcome <span class="text-cyan-900"> to</span> heaven</h1>
+    </header>
+    <main class="rounded-lg w-3/4 bg-green-400 mx-auto mt-8 mb-8 pt-6 pb-6 content-center">
+
+        <section class="w-3/4 grid grid-cols-3 gap-4 mx-auto">
+            <div class="bg-green-200">
+                <h1 class="text-center text-2xl">Deposit</h1>
+                <h1 class="text-center text-3xl">$ <span id="dep-value"></span></h1>
+            </div>
+            <div class="bg-red-200">
+                <h1 class="text-center text-2xl">Withdraw</h1>
+                <h1 class="text-center text-3xl">$ <span id="wid-value"></span></h1>
+            </div>
+            <div class="bg-amber-200">
+                <h1 class="text-center text-2xl">Balance</h1>
+                <h1 class="text-center text-3xl">$ <span id="bal-value">1800</span></h1>
+            </div>
+        </section>
+        <section class=" grid grid-cols-2 gap-2 mt-5 mx-2">
+            <div class="bg-purple-700 rounded-bl-lg rounded-tr-lg">
+                <input id="input-deposit" type="number" class="border-2 border-blue-500 mx-auto block mt-5 mb-3 " placeholder="$ Deposit">
+                <button id="button-deposit" class="hover:bg-cyan-700 hover:font-bold mx-20 bg-blue-300 text-amber-50 rounded-br-lg rounded-tl-lg px-2 py-1 mx-auto ">Deposit</button>
+            </div>
+            <div class="bg-pink-300 ounded-bl-lg rounded-tr-lg">
+                <input id="input-withdraw" type="number" class="border-2 border-blue-500  mx-auto block mt-5 mb-3" placeholder="$ Withdraw">
+                <button id="button-withdraw" class=" hover:bg-red-700 hover:font-bold mx-20 bg-blue-300 text-amber-50 rounded-br-lg rounded-tl-lg px-2 py-1 mx-auto ">Withdraw</button>
+            </div>
+
+        </section>
+
+    </main>
+    <footer>
+        <button style="display: flex;" id="button-logout" class="hover:font-bold hover:bg-rose-900 bg-yellow-800 text-amber-50 rounded-br-lg rounded-tl-lg px-2 py-1 mx-auto ">Log out</button>
+
+    </footer>
+    <script>
+        const dval = document.getElementById('dep-value');
+        const wval = document.getElementById('wid-value');
+        const bval = document.getElementById('bal-value');
+        document.getElementById('button-deposit').addEventListener('click', function(event) {
+            var nval = document.getElementById('input-deposit');
+            dval.innerText = Number(dval.innerText) + Number(nval.value);
+            bval.innerText = Number(bval.innerText) + Number(nval.value);
+            nval.value = '';
+        })
+        document.getElementById('button-withdraw').addEventListener('click', function(event) {
+            var nval = document.getElementById('input-withdraw');
+            wval.innerText = Number(wval.innerText) + Number(nval.value);
+            bval.innerText = Number(bval.innerText) - Number(nval.value);
+            nval.value = '';
+        })
+        document.getElementById('button-logout').addEventListener('click', function() {
+            window.location.href = 'index.html';
+        })
+    </script>
+</body>
+
+</html>

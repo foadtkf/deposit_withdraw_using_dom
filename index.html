@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body>
+    <header>
+        <h1 class="mt-28 text-center text-5xl hover:font-bold ">Login <span class="text-cyan-900"> Form</span> !!!</h1>
+    </header>
+    <main class=" w-3/4 bg-green-400 mx-auto mt-8 mb-8 pt-6 pb-6 content-center">
+        <h2 class="text-center text-2xl">Enter email and password: </h2>
+        <input id="email" type="text " class="w-3/4 mx-auto block mt-5 mb-3 " placeholder="Email">
+        <input id="password" type="password" class="w-3/4 mx-auto block mb-3" placeholder="Password">
+        <button style="display: flex;" id="button" class="bg-yellow-800 text-amber-50 rounded-br-lg rounded-tl-lg px-2 py-1 mx-auto ">Login</button>
+    </main>
+
+
+    <script>
+        document.getElementById('button').addEventListener('click', function() {
+            const mail = document.getElementById('email').value;
+            const pass = document.getElementById('password').value;
+            if (mail == 'fakhrulif@gmail.com' && pass == '1234') {
+                document.location.href = 'success.html';
+            } else
+                alert('wrong email or password');
+        })
+    </script>
+</body>
+
+</html>
